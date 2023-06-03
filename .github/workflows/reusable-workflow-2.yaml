@@ -5,6 +5,7 @@ on:
 
 jobs:
   ru2-job1:
+    name: thisisthejob
     runs-on: ubuntu-latest
     steps:
       - name: checkout
