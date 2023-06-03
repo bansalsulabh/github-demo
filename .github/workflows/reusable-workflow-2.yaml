@@ -1,0 +1,14 @@
+name: Reusable Workflow 2
+
+on:
+  workflow_call:
+
+jobs:
+  ru2-job1:
+    runs-on: [ self-hosted ]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: checkout
+        run: |
+          echo "I am reusbale workflow 2"
