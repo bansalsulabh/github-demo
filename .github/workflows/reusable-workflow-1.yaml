@@ -15,7 +15,7 @@ jobs:
       - name: checkout
         run: |
           echo "I am reusbale workflow 1"
-          echo '${{ jobs.ru1-job1.name }}'
+          echo '${{ job.ru1-job1.name }}'
       - name: Dump GitHub context
         id: github_context_step
         run: echo '${{ toJSON(github) }}'
