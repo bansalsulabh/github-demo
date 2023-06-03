@@ -8,7 +8,7 @@ jobs:
     uses: ./.github/workflows/reusable-workflow-2.yaml
   ru1-job1:
     name: thisisthejob
-    runs-on: [ self-hosted ]
+    runs-on: [ linux ]
     steps:
       - name: checkout
         uses: actions/checkout@v1
