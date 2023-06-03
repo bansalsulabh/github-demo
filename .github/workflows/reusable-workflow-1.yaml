@@ -21,3 +21,5 @@ jobs:
         run: echo '${{ toJSON(github) }}'
       - name: Dump job context
         run: echo '${{ toJSON(job) }}'
+      - name: get job name
+        run: gh run view '${{ github.run_id }}' --log | grep Complete job name
