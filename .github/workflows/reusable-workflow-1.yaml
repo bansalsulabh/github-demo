@@ -1,0 +1,23 @@
+name: Reusable Workflow 1
+
+on:
+  workflow_call:
+
+jobs:
+  call-workflow-2:
+    uses: ./.github/workflows/reusable-workflow-2.yaml
+  ru1-job1:
+    name: thisisthejob
+    runs-on: [ self-hosted ]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: checkout
+        run: |
+          echo "I am reusbale workflow 1"
+          echo '${{ job.ru1-job1.name }}'
+      - name: Dump GitHub context
+        id: github_context_step
+        run: echo '${{ toJSON(github) }}'
+      - name: Dump job context
+        run: echo '${{ toJSON(job) }}'
